@@ -18,3 +18,5 @@ git commit -m 'deploy'
 git push -f git@github.com:jiangqianqian/jiangqianqian.github.io.git master
 
 cd -
+
+rm -rf docs/.vuepress/dist
