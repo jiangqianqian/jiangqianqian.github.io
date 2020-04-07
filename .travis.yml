@@ -1,14 +1,20 @@
 language: node_js
 node_js:
-  - "12"
-services:
-  - docker
+  - "8"
 
-before_install:
+cache:
+  directories:
+    - "node_modules"
+
+branches:
+  only:
+    - dev
+
+install:
   - npm install
+  - npm run build
 
 script:
-  - npm run bild
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t jiangqianiqan/jiangqianqian-blog:latest .
-  - docker push jiangqianqian/jiangqianqian-blog:latest
+  - ./deploy.sh
+
+branch: dev
