@@ -6,15 +6,20 @@ cache:
   directories:
     - "node_modules"
 
-branches:
-  only:
-    - dev
-
 install:
   - npm install
-  - npm run build
 
 script:
-  - ./deploy.sh
+  - npm run build
 
-branch: dev
+after_success:
+  - cd docs/.vuepress/dist
+  - git init
+  - git config --global user.name "${U_NAME}"
+  - git config --global user.email "${U_EMAIL}"
+  - git add -A
+  - git commit -m 'deploy'
+  - git push --quiet --force "https://${GH_TOKEN}@${GH_REF}" master:${P_BRANCH}
+  - cd -
+  - rm -rf docs/.vuepress/dist
+
