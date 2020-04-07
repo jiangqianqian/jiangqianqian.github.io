@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "12"
+services:
+  - docker
+
+before_install:
+  - npm install
+
+script:
+  - npm run bild
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t jiangqianiqan/jiangqianqian-blog:latest .
+  - docker push jiangqianqian/jiangqianqian-blog:latest
