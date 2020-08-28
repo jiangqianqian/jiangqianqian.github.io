@@ -13,6 +13,7 @@
   "author": "jqq",
   "license": "ISC",
   "devDependencies": {
+    "@babel/compat-data": "^7.11.0",
     "vuepress": "^1.3.1"
   }
 }

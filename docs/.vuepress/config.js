@@ -59,11 +59,11 @@ module.exports = {
         path: '/pages/Network/main.md',      // 可选的, 应该是一个绝对路径
         collapsable: false, // 可选的, 默认值是 true,
       },
-      // {
-      //   title: 'Webpack',   // 必要的
-      //   path: '/pages/Webpack/main.md',      // 可选的, 应该是一个绝对路径
-      //   collapsable: false, // 可选的, 默认值是 true,
-      // },
+      {
+        title: 'Webpack',   // 必要的
+        path: '/pages/Webpack/main.md',      // 可选的, 应该是一个绝对路径
+        collapsable: false, // 可选的, 默认值是 true,
+      },
       // {
       //   title: 'NodeJS',   // 必要的
       //   path: '/pages/Node/main.md',      // 可选的, 应该是一个绝对路径
