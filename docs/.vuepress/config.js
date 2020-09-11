@@ -32,48 +32,50 @@ module.exports = {
       { text: 'Github', link: 'https://github.com/jiangqianqian' },
     ],
 
+    sidebar: false,
+
     //侧边导航栏：会根据当前的文件路径是否匹配侧边栏数据，自动显示/隐藏
-    sidebar: [
-      {
-        title: 'ES6',   // 必要的
-        path: '/pages/ES6/main.md',      // 可选的, 应该是一个绝对路径
-        collapsable: false, // 可选的, 默认值是 true,
-      },
-      {
-        title: 'Vue',   // 必要的
-        path: '/pages/Vue/main.md',      // 可选的, 应该是一个绝对路径
-        collapsable: false, // 可选的, 默认值是 true,
-      },
-      // {
-      //   title: '移动端',   // 必要的
-      //   path: '/pages/Mobile/main.md',      // 可选的, 应该是一个绝对路径
-      //   collapsable: false, // 可选的, 默认值是 true,
-      // },
-      {
-        title: '地图使用',   // 必要的
-        path: '/pages/Map/main.md',      // 可选的, 应该是一个绝对路径
-        collapsable: false, // 可选的, 默认值是 true,
-      },
-      {
-        title: '网络',   // 必要的
-        path: '/pages/Network/main.md',      // 可选的, 应该是一个绝对路径
-        collapsable: false, // 可选的, 默认值是 true,
-      },
-      {
-        title: 'Webpack',   // 必要的
-        path: '/pages/Webpack/main.md',      // 可选的, 应该是一个绝对路径
-        collapsable: false, // 可选的, 默认值是 true,
-      },
-      // {
-      //   title: 'NodeJS',   // 必要的
-      //   path: '/pages/Node/main.md',      // 可选的, 应该是一个绝对路径
-      //   collapsable: false, // 可选的, 默认值是 true,
-      // },
-      // {
-      //   title: '安全',   // 必要的
-      //   path: '/pages/Secure/main.md',      // 可选的, 应该是一个绝对路径
-      //   collapsable: false, // 可选的, 默认值是 true,
-      // },
-    ]
+    // sidebar: [
+    //   {
+    //     title: 'ES6',   // 必要的
+    //     path: '/pages/ES6/main.md',      // 可选的, 应该是一个绝对路径
+    //     collapsable: false, // 可选的, 默认值是 true,
+    //   },
+    //   {
+    //     title: 'Vue',   // 必要的
+    //     path: '/pages/Vue/main.md',      // 可选的, 应该是一个绝对路径
+    //     collapsable: false, // 可选的, 默认值是 true,
+    //   },
+    //   // {
+    //   //   title: '移动端',   // 必要的
+    //   //   path: '/pages/Mobile/main.md',      // 可选的, 应该是一个绝对路径
+    //   //   collapsable: false, // 可选的, 默认值是 true,
+    //   // },
+    //   {
+    //     title: '地图使用',   // 必要的
+    //     path: '/pages/Map/main.md',      // 可选的, 应该是一个绝对路径
+    //     collapsable: false, // 可选的, 默认值是 true,
+    //   },
+    //   {
+    //     title: '网络',   // 必要的
+    //     path: '/pages/Network/main.md',      // 可选的, 应该是一个绝对路径
+    //     collapsable: false, // 可选的, 默认值是 true,
+    //   },
+    //   {
+    //     title: 'Webpack',   // 必要的
+    //     path: '/pages/Webpack/main.md',      // 可选的, 应该是一个绝对路径
+    //     collapsable: false, // 可选的, 默认值是 true,
+    //   },
+    //   // {
+    //   //   title: 'NodeJS',   // 必要的
+    //   //   path: '/pages/Node/main.md',      // 可选的, 应该是一个绝对路径
+    //   //   collapsable: false, // 可选的, 默认值是 true,
+    //   // },
+    //   // {
+    //   //   title: '安全',   // 必要的
+    //   //   path: '/pages/Secure/main.md',      // 可选的, 应该是一个绝对路径
+    //   //   collapsable: false, // 可选的, 默认值是 true,
+    //   // },
+    // ]
   }
 }
