@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>H5 如何唤起百度地图 App | 我的博客</title>
+    <meta name="description" content="前端技术博客">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/blog-logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.24d7f512.css" as="style"><link rel="preload" href="/assets/js/app.28a078ed.js" as="script"><link rel="preload" href="/assets/js/2.29615a60.js" as="script"><link rel="preload" href="/assets/js/8.0ee12156.js" as="script"><link rel="prefetch" href="/assets/js/10.06561cef.js"><link rel="prefetch" href="/assets/js/11.5b7aa152.js"><link rel="prefetch" href="/assets/js/12.93e797a9.js"><link rel="prefetch" href="/assets/js/13.3a7701aa.js"><link rel="prefetch" href="/assets/js/14.eb858a26.js"><link rel="prefetch" href="/assets/js/15.49ca3df7.js"><link rel="prefetch" href="/assets/js/16.eabd664a.js"><link rel="prefetch" href="/assets/js/17.b5773142.js"><link rel="prefetch" href="/assets/js/18.f1ebda67.js"><link rel="prefetch" href="/assets/js/19.d99e6168.js"><link rel="prefetch" href="/assets/js/20.2aee8557.js"><link rel="prefetch" href="/assets/js/3.545e0308.js"><link rel="prefetch" href="/assets/js/4.b2c0328d.js"><link rel="prefetch" href="/assets/js/5.81f1e383.js"><link rel="prefetch" href="/assets/js/6.92fb7624.js"><link rel="prefetch" href="/assets/js/7.c497c11e.js"><link rel="prefetch" href="/assets/js/9.d1595109.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.24d7f512.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">我的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/ES6/main.html" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/jiangqianqian" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/ES6/main.html" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/jiangqianqian" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="h5-如何唤起百度地图-app"><a href="#h5-如何唤起百度地图-app" class="header-anchor">#</a> H5 如何唤起百度地图 App</h1> <p>最近接手了一个需求，要求混合式开发，前端做好 h5 后将页面嵌入到 ios 和 android 中，需要用到百度地图的地图导航。</p> <div class="custom-block tip"><p class="custom-block-title">具体功能点如下：</p> <ol><li>如果手机端（ios, android）安装了百度地图，点击导航按钮，唤起百度地图 app</li> <li>否则，打开 web 端百度地图导航</li></ol></div> <p>需要用到的百度地图的 api 文档链接如下：
+<a href="http://lbsyun.baidu.com/index.php?title=uri/api/ios" target="_blank" rel="noopener noreferrer">http://lbsyun.baidu.com/index.php?title=uri/api/ios<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><strong>最开始的代码：</strong></p> <div class="language-(js) extra-class"><pre class="language-text"><code>  // 尝试唤起百度地图 app
+  window.location.href = scheme;
+  var timeout = 600;
+  var startTime = Date.now();
+  var t = setTimeout(function () {
+    var endTime = Date.now();
+    // 当成功唤起百度地图 app 后，再返回到 h5 页面，这时 endTime - startTime 一定大于 timeout + 200； 如果唤起失败, 打开 web 端百度地图导航
+    if (!startTime || (endTime - startTime) &lt; (timeout + 200)) {
+       window.location.href = 'http://api.map.baidu.com/direction' + queryStr + '&amp;output=html';
+    }
+  }, timeout);
+
+</code></pre></div><p><strong>问题：</strong>
+上面这段代码在 android 机器上运行是没有问题的，可是在 ios 上却始终执行了 setTimeout 这个计时器，所以如果<strong>在 ios 端，即使 app 处于后台，它的 h5 代码还是会执行</strong>。</p> <p>所以需要换一种方式，总的思路是：</p> <ol><li>采用轮询的方式</li> <li>在 600 ms 内尝试唤起百度地图 app, 唤起失败后， 判断 h5 是处于前台还是后台，如果是前台，则打开 web 端百度地图 app。不管唤起成功还是失败，过 200 ms 后都清除定时器。</li></ol> <p><strong>修改后的代码：</strong></p> <div class="language-(js) extra-class"><pre class="language-text"><code>  var startTime = Date.now();
+  var count = 0;
+  var endTime = 0;
+  var t = setInterval(function () {
+    count += 1;
+    endTime = Date.now() - startTime;
+    if (endTime &gt; 800) {
+      clearInterval(t);
+    }
+    if (count &lt; 30) return;
+    if (!(document.hidden || document.webkitHidden)) {
+      window.location.href = 'http://api.map.baidu.com/direction' + queryStr + '&amp;output=html';
+    }
+  }, 20);
+
+</code></pre></div><p><strong>完整的代码：</strong></p> <div class="language-(js) extra-class"><pre class="language-text"><code>  function wakeBaidu() {
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function (result) {
+      if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        var latCurrent = result.point.lat; //获取到的纬度
+        var lngCurrent = result.point.lng; //获取到的经度
+        if (latCurrent &amp;&amp; lngCurrent) {
+          var scheme = '';
+
+          // urlObject 是我这边地址栏查询参数对象
+          var queryStr = '?origin=name:我的位置|latlng:' + latCurrent + ',' + lngCurrent + '&amp;destination=' + urlObject.lat + ',' + urlObject.lng + '&amp;region=' + urlObject.city + '&amp;coord_type=bd09ll&amp;mode=driving';
+
+          if (isIOS()) {
+            // ios 端
+            scheme = 'baidumap://map/direction' + queryStr;
+          } else {
+            // android 端
+            scheme = 'bdapp://map/direction' + queryStr;
+          }
+
+          // 主要实现代码
+          window.location.href = scheme;
+
+          var startTime = Date.now();
+          var count = 0;
+          var endTime = 0;
+
+          var t = setInterval(function () {
+            count += 1;
+            endTime = Date.now() - startTime;
+            if (endTime &gt; 800) {
+              clearInterval(t);
+            }
+            if (count &lt; 30) return;
+            if (!(document.hidden || document.webkitHidden)) {
+              window.location.href = 'http://api.map.baidu.com/direction' + queryStr + '&amp;output=html';
+            }
+          }, 20);
+
+          window.onblur = function () {
+            clearInterval(t);
+          };
+        } else {
+          alert('获取不到定位，请检查手机定位设置');
+        }
+      }
+    });
+  }
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.28a078ed.js" defer></script><script src="/assets/js/2.29615a60.js" defer></script><script src="/assets/js/8.0ee12156.js" defer></script>
+  </body>
+</html>

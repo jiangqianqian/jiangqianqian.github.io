@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>你需要了解的前后端传参 | 我的博客</title>
+    <meta name="description" content="前端技术博客">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/blog-logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.24d7f512.css" as="style"><link rel="preload" href="/assets/js/app.28a078ed.js" as="script"><link rel="preload" href="/assets/js/2.29615a60.js" as="script"><link rel="preload" href="/assets/js/13.3a7701aa.js" as="script"><link rel="prefetch" href="/assets/js/10.06561cef.js"><link rel="prefetch" href="/assets/js/11.5b7aa152.js"><link rel="prefetch" href="/assets/js/12.93e797a9.js"><link rel="prefetch" href="/assets/js/14.eb858a26.js"><link rel="prefetch" href="/assets/js/15.49ca3df7.js"><link rel="prefetch" href="/assets/js/16.eabd664a.js"><link rel="prefetch" href="/assets/js/17.b5773142.js"><link rel="prefetch" href="/assets/js/18.f1ebda67.js"><link rel="prefetch" href="/assets/js/19.d99e6168.js"><link rel="prefetch" href="/assets/js/20.2aee8557.js"><link rel="prefetch" href="/assets/js/3.545e0308.js"><link rel="prefetch" href="/assets/js/4.b2c0328d.js"><link rel="prefetch" href="/assets/js/5.81f1e383.js"><link rel="prefetch" href="/assets/js/6.92fb7624.js"><link rel="prefetch" href="/assets/js/7.c497c11e.js"><link rel="prefetch" href="/assets/js/8.0ee12156.js"><link rel="prefetch" href="/assets/js/9.d1595109.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.24d7f512.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">我的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/ES6/main.html" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/jiangqianqian" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/ES6/main.html" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/jiangqianqian" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="你需要了解的前后端传参"><a href="#你需要了解的前后端传参" class="header-anchor">#</a> 你需要了解的前后端传参</h1> <p><strong>前后端传参一般有两种形式：</strong></p> <p><strong>key=value</strong> 形式传参（即 parameter 形式）
+<strong>body</strong> 形式传参（传 json 数据给后端）</p> <blockquote><p><strong>key=value 形式传参</strong></p></blockquote> <p><strong>1.</strong> 如果使用的是 GET 请求，浏览器展示的 Request URL 会自动在路径后面加上 ?a=1&amp;b=2这样的参数，这就是 key=value 形式传参, 在控制台看到的参数形式是 “Query String Parameters”，后端解析时是用 querystring.parse 进行处理。</p> <p>axios 请求示例</p> <div class="language-(js) extra-class"><pre class="language-text"><code>import request from 'axios'
+
+...
+
+someInterface (params) {
+  return request({
+    url: '请求路径',
+    method: 'GET',
+    params
+  })
+},
+</code></pre></div><p>浏览器关于 GET 请求的呈现：</p> <p><img src="/p1.jpeg" alt="图片描述"></p> <p><strong>2.</strong> 如果发送 POST 请求，对传参进行如下处理，则在控制台看到的参数形式是 “Form Data”，而且浏览器会自动将 Request Headers 的 Content-Type 设置为 application/x-www-form-urlencoded, 这种也是  key=value 形式传参， 后端解析时是用 querystring.parse 进行处理。</p> <p>处理方式1：</p> <div class="language-(js) extra-class"><pre class="language-text"><code>import request from 'axios'
+import qs from 'qs'
+
+...
+
+someInterface (params) {
+  return request({
+    url: '请求路径',
+    method: 'POST',
+    data: qs.stringify(params)
+  })
+},
+
+</code></pre></div><p>处理方式2：</p> <div class="language-(js) extra-class"><pre class="language-text"><code>import request from 'axios'
+import qs from 'qs'
+
+...
+
+someInterface (params) {
+    return request({
+      url: '请求路径',
+      method: 'POST',
+      data: params,
+      transformRequest: [(data) =&gt; {
+        let ret = ''
+        for (let it in data) {
+          ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&amp;'
+        }
+        return ret
+      }]
+    })
+  },
+
+</code></pre></div><p>浏览器呈现：</p> <p><img src="/p2.jpeg" alt="clipboard.png"></p> <blockquote><p><strong>body 形式传参</strong></p></blockquote> <p>如果发送 POST、PUT、PATCH 等请求，若 content-type 为 application/json（使用 axios 发送这些请求时，浏览器 Request Headers 的 Content-Type 没显示出，则默认为 application/json），在控制台中看到的参数形式叫做 &quot;Request payload&quot;，后端解析用 body-parser 来处理</p> <p>axios 请求示例</p> <div class="language-(js) extra-class"><pre class="language-text"><code>import request from 'axios'
+
+    ...
+
+    someInterface (params) {
+      return request({
+        url: '请求路径',
+        method: 'POST',
+        data: params
+      })
+    },
+</code></pre></div><p>浏览器呈现：</p> <p><img src="/p3.jpeg" alt="clipboard.png"></p> <p><strong>另外</strong>，jquery 的 ajax 请求中当 type 为 POST 时，会将 contentType统一处理成:
+&quot;application/x-www-form-urlencoded; charset=UTF-8&quot;, 所以使用的是 Form Data 这种传参形式，我测试时目前没看到过有 Request payload 这种形式的。</p> <p><strong>总之</strong>，method 用 GET 还是 POST 是后端定义好的，前端写死就好，至于是 key=value 还是 body 形式，要看后端是什么方式来解析，并非 method  为 POST, 就一定要用 body 形式，也可以是 key=value 形式。qs.stringify 可以转化成 key=value 形式（即将参数对象序列化成 URL 的形式，以&amp;进行拼接）。</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.28a078ed.js" defer></script><script src="/assets/js/2.29615a60.js" defer></script><script src="/assets/js/13.3a7701aa.js" defer></script>
+  </body>
+</html>

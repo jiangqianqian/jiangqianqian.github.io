@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>async...await 的一些使用总结 | 我的博客</title>
+    <meta name="description" content="前端技术博客">
+    <meta name="generator" content="VuePress 1.3.1">
+    <link rel="icon" href="/blog-logo.png">
+    
+    <link rel="preload" href="/assets/css/0.styles.24d7f512.css" as="style"><link rel="preload" href="/assets/js/app.28a078ed.js" as="script"><link rel="preload" href="/assets/js/2.29615a60.js" as="script"><link rel="preload" href="/assets/js/6.92fb7624.js" as="script"><link rel="prefetch" href="/assets/js/10.06561cef.js"><link rel="prefetch" href="/assets/js/11.5b7aa152.js"><link rel="prefetch" href="/assets/js/12.93e797a9.js"><link rel="prefetch" href="/assets/js/13.3a7701aa.js"><link rel="prefetch" href="/assets/js/14.eb858a26.js"><link rel="prefetch" href="/assets/js/15.49ca3df7.js"><link rel="prefetch" href="/assets/js/16.eabd664a.js"><link rel="prefetch" href="/assets/js/17.b5773142.js"><link rel="prefetch" href="/assets/js/18.f1ebda67.js"><link rel="prefetch" href="/assets/js/19.d99e6168.js"><link rel="prefetch" href="/assets/js/20.2aee8557.js"><link rel="prefetch" href="/assets/js/3.545e0308.js"><link rel="prefetch" href="/assets/js/4.b2c0328d.js"><link rel="prefetch" href="/assets/js/5.81f1e383.js"><link rel="prefetch" href="/assets/js/7.c497c11e.js"><link rel="prefetch" href="/assets/js/8.0ee12156.js"><link rel="prefetch" href="/assets/js/9.d1595109.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.24d7f512.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">我的博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/ES6/main.html" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/jiangqianqian" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/pages/ES6/main.html" class="nav-link">
+  文章
+</a></div><div class="nav-item"><a href="https://github.com/jiangqianqian" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="async-await-的一些使用总结"><a href="#async-await-的一些使用总结" class="header-anchor">#</a> async...await 的一些使用总结</h1> <h2 id="关于-async"><a href="#关于-async" class="header-anchor">#</a> 关于 async</h2> <p>它会隐式返回一个 Promise 对象</p> <div class="language-(js) extra-class"><pre class="language-text"><code>async func () {
+  return 'a'
+}
+
+// 等价于
+func () {
+  return new Promise((resolve, reject) =&gt; {
+    resolve ('a')
+  })
+}
+</code></pre></div><div class="language-(js) extra-class"><pre class="language-text"><code>async func () {
+  return new Promise(resolve, reject) =&gt; {
+    resolve ('a')
+  })
+}
+
+// 等价于
+func () {
+  let promise = return new Promise((resolve, reject) =&gt; {
+    resolve('a')
+  })
+  return new Promise((resolve) =&gt; resolve(promise))
+}
+</code></pre></div><p>async func 中有 return 'a', 等价于 func 中 new Promise 的 resolve('a')</p> <p>async func 中有 throw Error('a'), 等价于 func 中 new Promise 的 reject('a')</p> <h2 id="关于-await"><a href="#关于-await" class="header-anchor">#</a> 关于 <strong>await</strong></h2> <p>await 后面跟的是 Promise 对象，如果不是，也会转换成 Promise 对象。</p> <p>如 const res = await 'hello', 等价于 const res = await <strong>Promise.resolve</strong>('hello')</p> <p>try … catch() 中的 catch() 会捕获到 Promise 的异常，下面的代码是我经常使用的</p> <div class="language-(js) extra-class"><pre class="language-text"><code>async function func() {
+  try {
+    const res = await Promise.reject(30);
+  } catch (err) {
+    console.log(err); // 30
+  }
+}
+
+func();
+</code></pre></div><p>依次顺序执行异步操作</p> <div class="language-(js) extra-class"><pre class="language-text"><code>// 先执行 task1，等 res1 有结果后，再执行 task2
+async func () {
+  const res1 = await task1()
+  const res2 = await task2()
+}
+</code></pre></div><p>并行执行异步操作</p> <div class="language-(js) extra-class"><pre class="language-text"><code>func () {
+  task1()
+  task2()
+  task3()
+}
+</code></pre></div><p>或者，</p> <div class="language-(js) extra-class"><pre class="language-text"><code>async func () {
+  const promise1 = task1()
+  const promise2 = task2()
+  const res1 = await promise1
+  const res2 = await promise2
+}
+</code></pre></div><p>或者，</p> <div class="language-(js) extra-class"><pre class="language-text"><code>async function func () {
+  await Promise.all([task1(), task2(),task3()])
+  console.log('三个任务执行完毕')
+  // 全部执行完毕后，接着后面的代码
+}
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.28a078ed.js" defer></script><script src="/assets/js/2.29615a60.js" defer></script><script src="/assets/js/6.92fb7624.js" defer></script>
+  </body>
+</html>
